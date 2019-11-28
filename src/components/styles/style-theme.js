@@ -1,3 +1,5 @@
+// @flow
+
 const colors = {
   eucalyptus: '#4FC6A5',
   whiteSmoke: '#F7F0F5',

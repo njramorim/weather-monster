@@ -1,21 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import withStyle from './style';
 
-type HeadLineProps = {
-  tag: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6',
-  align: 'left' | 'center' | 'right',
-  text: string,
-  className: string
-};
+const HeadLine = ({ tag: Tag, text, align, className }) => (
+  <Tag className={className} align={align}>
+    {text}
+  </Tag>
+);
 
-const HeadLine = (props: HeadLineProps) => {
-  const { tag: Tag, text, align, className } = props;
-
-  return (
-    <Tag className={className} align={align}>
-      {text}
-    </Tag>
-  );
+HeadLine.propTypes = {
+  tag: PropTypes.oneOf('h1', 'h2', 'h3', 'h4', 'h5', 'h6'),
+  align: PropTypes.oneOf('left', 'center', 'right'),
+  text: PropTypes.string,
+  className: PropTypes.string
 };
 
 HeadLine.defaultProps = {

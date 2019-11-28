@@ -1,20 +1,17 @@
-// @flow
 import React from 'react';
+import PropTypes from 'prop-types';
 import withStyle from './style';
 
-type StatusMessageProps = {
-  className: string,
-  type: 'danger' | 'alert' | 'success',
-  message: string
-};
+const StatusMessage = ({ className, message }) => (
+  <aside className={className}>
+    <p>{message}</p>
+  </aside>
+);
 
-const StatusMessage = (props: StatusMessageProps) => {
-  const { className, message } = props;
-  return (
-    <aside className={className}>
-      <p>{message}</p>
-    </aside>
-  );
+StatusMessage.propTypes = {
+  className: PropTypes.string,
+  type: PropTypes.oneOf('danger', 'alert', 'success'),
+  message: PropTypes.string
 };
 
 StatusMessage.defaultProps = {

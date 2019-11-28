@@ -1,28 +1,12 @@
-// @flow
 import React from 'react';
+import PropTypes from 'prop-types';
 import withStyle from './style';
 import HeadLine from '../HeadLine';
 import SimpleText from '../SimpleText';
 import CloseButton from '../CloseButton';
 import WeatherFigure from '../WeatherFigure';
 
-export type WeatherCardProps = {
-  className: string,
-  weather: {
-    name: string,
-    tempMax: string,
-    tempMin: string,
-    icon: string,
-    description: string,
-    cityId: string,
-    coords: [number, number],
-    country: string
-  },
-  onClose: Function
-};
-
-const WeatherCard = (props: WeatherCardProps) => {
-  const { className, onClose, weather } = props;
+const WeatherCard = ({ className, onClose, weather }) => {
   const {
     name,
     tempMax,
@@ -63,7 +47,6 @@ const WeatherCard = (props: WeatherCardProps) => {
         </li>
         <li className="tempItem">
           <div className="tempMin">
-            {'   '}
             <HeadLine tag="h3" text={tempMin} />
             °C
           </div>
@@ -76,6 +59,21 @@ const WeatherCard = (props: WeatherCardProps) => {
       </aside>
     </article>
   );
+};
+
+WeatherCard.propTypes = {
+  className: PropTypes.string,
+  weather: PropTypes.shape({
+    name: PropTypes.string,
+    tempMax: PropTypes.string,
+    tempMin: PropTypes.string,
+    icon: PropTypes.string,
+    description: PropTypes.string,
+    cityId: PropTypes.string,
+    coords: PropTypes.arrayOf(PropTypes.number),
+    country: PropTypes.string
+  }),
+  onClose: PropTypes.func
 };
 
 WeatherCard.displayName = 'WeatherCard';

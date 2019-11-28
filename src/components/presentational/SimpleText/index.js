@@ -1,14 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import withStyle from './style';
 
-type SimpleTextProps = {
-  text: string,
-  className: string
-};
+const SimpleText = ({ className, text }) => <p className={className}>{text}</p>;
 
-const SimpleText = (props: SimpleTextProps) => (
-  <p className={props.className}>{props.text}</p>
-);
+SimpleText.propTypes = {
+  text: PropTypes.string,
+  className: PropTypes.string
+};
 
 SimpleText.displayName = 'SimpleText';
 

@@ -1,12 +1,15 @@
+// @flow
 import styled from 'styled-components';
+import type { styledHOC, styledThemeProps } from '../../../lib/types';
 
-const style = component => styled(component)`
+const style: styledHOC<any, any> = component => styled(component)`
   padding: 1rem;
   display: flex;
   position: relative;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.light};
+  border-bottom: 1px solid
+    ${({ theme }: styledThemeProps) => theme.colors.light};
   background-color: transparent;
   transition: background-color 0.2s;
   width: 100%;
@@ -32,7 +35,7 @@ const style = component => styled(component)`
       font-weight: bold;
       font-size: 1.1rem;
       opacity: 0.8;
-      padding-right: ${({ theme }) => theme.padding.min};
+      padding-right: ${({ theme }: styledThemeProps) => theme.padding.min};
     }
   }
 `;

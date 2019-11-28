@@ -1,17 +1,10 @@
-// @flow
 import React from 'react';
+import PropTypes from 'prop-types';
 import withStyle from './style';
-
-type SearchFieldProps = {
-  className: string,
-  onCitySearch: Function
-};
 
 let timer = null;
 
-const SearchField = (props: SearchFieldProps) => {
-  const { className, onCitySearch } = props;
-
+const SearchField = ({ className, onCitySearch }) => {
   const showSearchResults = value => {
     clearTimeout(timer);
     onCitySearch(value);
@@ -43,6 +36,11 @@ const SearchField = (props: SearchFieldProps) => {
       />
     </form>
   );
+};
+
+SearchField.propTypes = {
+  className: PropTypes.string,
+  onCitySearch: PropTypes.func
 };
 
 SearchField.defaultProps = {

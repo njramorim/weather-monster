@@ -1,26 +1,9 @@
-// @flow
 import React from 'react';
+import PropTypes from 'prop-types';
 import withStyle from './style';
 import CityItem from '../CityItem';
 
-type CitiesListProps = {
-  className: string,
-  cities: [
-    {
-      name: string,
-      country: string,
-      cityId: number
-    }
-  ],
-  selectedCitiesId: [number],
-  isOpen: boolean,
-  isLoading: boolean,
-  onCityAdd: number => void,
-  onCloseList: Function
-};
-
-const CitiesList = (props: CitiesListProps) => {
-  const { className, cities, onCityAdd, selectedCitiesId } = props;
+const CitiesList = ({ className, cities, onCityAdd, selectedCitiesId }) => {
   const isChecked = ({ cityId }) => selectedCitiesId.some(id => id === cityId);
 
   return (
@@ -43,9 +26,25 @@ const CitiesList = (props: CitiesListProps) => {
   );
 };
 
+CitiesList.propTypes = {
+  className: PropTypes.string,
+  cities: PropTypes.array(
+    PropTypes.shape({
+      name: PropTypes.string,
+      country: PropTypes.string,
+      cityId: PropTypes.number
+    })
+  ),
+  selectedCitiesId: PropTypes.arrayOf(PropTypes.number),
+  isOpen: PropTypes.bool,
+  isLoading: PropTypes.bool,
+  onCityAdd: PropTypes.func,
+  onCloseList: PropTypes.func
+};
+
 CitiesList.defaultProps = {
   cities: [],
-  onCityAdd: () => null
+  onCityAdd: _ => _
 };
 
 CitiesList.displayName = 'CitiesList';

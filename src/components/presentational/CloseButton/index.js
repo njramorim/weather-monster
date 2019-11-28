@@ -1,28 +1,24 @@
-// @flow
 import React from 'react';
+import PropTypes from 'prop-types';
 import withStyle from './style';
 
-type CloseButtonProps = {
-  text: string,
-  disabled: boolean,
-  onClick: Function,
-  cityId: number,
-  className: string
-};
+const CloseButton = ({ text, disabled, onClick, className, cityId }) => (
+  <button
+    className={className}
+    disabled={disabled}
+    onClick={({ target }) => onClick(Number(target.value))}
+    value={cityId}
+  >
+    {text}
+  </button>
+);
 
-const CloseButton = (props: CloseButtonProps) => {
-  const { text, disabled, onClick, className, cityId } = props;
-
-  return (
-    <button
-      className={className}
-      disabled={disabled}
-      onClick={({ target }) => onClick(Number(target.value))}
-      value={cityId}
-    >
-      {text}
-    </button>
-  );
+CloseButton.propTypes = {
+  text: PropTypes.string,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func,
+  cityId: PropTypes.number,
+  className: PropTypes.string
 };
 
 CloseButton.defaultProps = {

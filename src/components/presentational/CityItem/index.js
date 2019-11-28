@@ -1,27 +1,14 @@
-// @flow
 import React from 'react';
+import PropTypes from 'prop-types';
 import withStyle from './style';
 import ActiveButton from '../ActiveButton';
 
-type CityItemProps = {
-  city: {
-    name: string,
-    country: string,
-    cityId: number
-  },
-  className: string,
-  isChecked: boolean,
-  onCityAdd: Function
-};
-
-const CityItem = (props: CityItemProps) => {
-  const {
-    className,
-    city: { name, country, cityId },
-    isChecked,
-    onCityAdd
-  } = props;
-
+const CityItem = ({
+  className,
+  city: { name, country, cityId },
+  isChecked,
+  onCityAdd
+}) => {
   const handleChange = ({ target }) => onCityAdd(Number(target.value));
 
   return (
@@ -36,6 +23,17 @@ const CityItem = (props: CityItemProps) => {
       <ActiveButton id={cityId} onChange={handleChange} isChecked={isChecked} />
     </div>
   );
+};
+
+CityItem.propTypes = {
+  city: PropTypes.shape({
+    name: PropTypes.string,
+    country: PropTypes.string,
+    cityId: PropTypes.number
+  }),
+  className: PropTypes.string,
+  isChecked: PropTypes.bool,
+  onCityAdd: PropTypes.func
 };
 
 CityItem.defaultProps = {
