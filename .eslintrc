@@ -1,0 +1,33 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react"
+  ],
+  "parser": "babel-eslint",
+  "plugins": ["flowtype", "react", "prettier"],
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "linebreak-style": 0,
+    "no-unused-vars": 1,
+    "semi": 0,
+    "quotes": ["error", "single", { "avoidEscape": true }],
+    "max-len": [1, 80, 2, { "ignoreComments": true, "ignoreStrings": true }],
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0,
+    "react/jsx-filename-extension": 0
+  }
+}

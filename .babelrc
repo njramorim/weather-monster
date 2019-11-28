@@ -1,0 +1,15 @@
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react", "@babel/flow"],
+  "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "pure": true,
+        "fileName": false
+      }
+    ],
+    "react-hot-loader/babel",
+    "@babel/plugin-proposal-object-rest-spread",
+    "@babel/plugin-proposal-class-properties"
+  ]
+}
