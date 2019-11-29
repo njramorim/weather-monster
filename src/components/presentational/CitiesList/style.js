@@ -1,10 +1,9 @@
 // @flow
 import styled, { css } from 'styled-components';
-import type { styledHOC, styledThemeProps } from '../../../lib/types';
 const MAX_HEIGHT = '30rem';
 const PADDING = '1rem';
 
-const style: styledHOC<any, any> = component => styled(component)`
+const style = component => styled(component)`
   position: absolute;
   left: 5%;
   z-index: 10;
@@ -15,7 +14,7 @@ const style: styledHOC<any, any> = component => styled(component)`
   transform-origin: center top;
   transition: all 0.2s ease-in-out;
 
-  ${({ isOpen }: { isOpen: boolean }) =>
+  ${({ isOpen }) =>
     isOpen &&
     css`
       pointer-events: initial;
@@ -28,8 +27,8 @@ const style: styledHOC<any, any> = component => styled(component)`
   }
 
   .listWrapper {
-    background: ${({ theme }: styledThemeProps) => theme.colors.highlight};
-    border-radius: ${({ theme }: styledThemeProps) => theme.borderRadius.min};
+    background: ${({ theme }) => theme.colors.highlight};
+    border-radius: ${({ theme }) => theme.borderRadius.min};
     box-shadow: inset 0rem -0.6rem 0rem 0rem rgba(0, 0, 0, 0.27);
     padding: ${PADDING};
     padding-bottom: 2rem;
@@ -40,7 +39,7 @@ const style: styledHOC<any, any> = component => styled(component)`
     display: block;
     margin: 0 auto;
 
-    ${({ isLoading }: { isLoading: boolean }) =>
+    ${({ isLoading }) =>
       isLoading &&
       css`
         pointer-events: none;

@@ -20,7 +20,7 @@ const WeatherCardList = ({ className, cities, onRemoveCity }) => {
 
 WeatherCardList.propTypes = {
   className: PropTypes.string,
-  cities: PropTypes.array(
+  cities: PropTypes.arrayOf(
     PropTypes.shape({ cityId: PropTypes.number, tempMax: PropTypes.number })
   ),
   onRemoveCity: PropTypes.func

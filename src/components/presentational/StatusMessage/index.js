@@ -10,7 +10,7 @@ const StatusMessage = ({ className, message }) => (
 
 StatusMessage.propTypes = {
   className: PropTypes.string,
-  type: PropTypes.oneOf('danger', 'alert', 'success'),
+  type: PropTypes.oneOf(['danger', 'alert', 'success']),
   message: PropTypes.string
 };
 

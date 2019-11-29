@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React, { Suspense } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import AwesomeDebouncePromise from 'awesome-debounce-promise';
@@ -13,6 +13,12 @@ const searchAPI = value => axios.get(`/api/cities?search=${value}`);
 const searchAPIDebounced = AwesomeDebouncePromise(searchAPI, 500);
 
 class CitiesSelection extends React.PureComponent {
+  static propTypes = {
+    fetchAddCity: PropTypes.func,
+    citiesId: PropTypes.arrayOf(PropTypes.number),
+    loading: PropTypes.bool
+  };
+
   state = {
     matchedCities: [],
     showResultBox: false

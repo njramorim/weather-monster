@@ -9,11 +9,10 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "prettier",
-    "prettier/flowtype",
     "prettier/react"
   ],
   "parser": "babel-eslint",
-  "plugins": ["flowtype", "react", "prettier"],
+  "plugins": ["react", "prettier"],
   "settings": {
     "react": {
       "createClass": "createReactClass",

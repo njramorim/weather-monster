@@ -28,7 +28,7 @@ const CitiesList = ({ className, cities, onCityAdd, selectedCitiesId }) => {
 
 CitiesList.propTypes = {
   className: PropTypes.string,
-  cities: PropTypes.array(
+  cities: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string,
       country: PropTypes.string,

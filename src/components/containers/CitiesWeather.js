@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { selectAddedCities } from '../../store/selected-cities/selectors';
 import { removeCity } from '../../store/selected-cities/action-creators';
@@ -7,10 +7,13 @@ import WeatherCardList from '../presentational/WeatherCardList';
 import StatusMessage from '../presentational/StatusMessage';
 
 class CitiesWeather extends React.PureComponent {
-  onRemoveCity = cityId => {
-    console.log('cityId: ', cityId);
-    this.props.removeCity(cityId);
+  static propTypes = {
+    removeCity: PropTypes.func,
+    cities: PropTypes.array,
+    error: PropTypes.bool
   };
+
+  onRemoveCity = cityId => this.props.removeCity(cityId);
 
   render() {
     const { cities, error } = this.props;

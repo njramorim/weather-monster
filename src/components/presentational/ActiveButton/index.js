@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withStyle from './style';
 
-const ActiveButton = ({ className, id, onChange, isChecked }) => (
+export const ActiveButton = ({ className, id, onChange, isChecked }) => (
   <div className={className}>
     <label className="clickArea" htmlFor={id} name={id}>
       Select

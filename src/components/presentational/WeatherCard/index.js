@@ -65,11 +65,11 @@ WeatherCard.propTypes = {
   className: PropTypes.string,
   weather: PropTypes.shape({
     name: PropTypes.string,
-    tempMax: PropTypes.string,
-    tempMin: PropTypes.string,
+    tempMax: PropTypes.number,
+    tempMin: PropTypes.number,
     icon: PropTypes.string,
     description: PropTypes.string,
-    cityId: PropTypes.string,
+    cityId: PropTypes.number,
     coords: PropTypes.arrayOf(PropTypes.number),
     country: PropTypes.string
   }),

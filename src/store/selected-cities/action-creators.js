@@ -3,15 +3,9 @@ import axios from 'axios';
 const callWeatherApi = async (id, coords, country) =>
   await axios.get(`/api/weather?id=${id}&coords=${coords}&country=${country}`);
 
-export const addCity = payload => ({
-  type: 'ADD_CITY',
-  payload
-});
+export const addCity = payload => ({ type: 'ADD_CITY', payload });
 
-export const removeCity = payload => ({
-  type: 'REMOVE_CITY',
-  payload
-});
+export const removeCity = payload => ({ type: 'REMOVE_CITY', payload });
 
 export const addCityError = () => ({ type: 'ADD_CITY_ERROR' });
 

@@ -9,9 +9,9 @@ const HeadLine = ({ tag: Tag, text, align, className }) => (
 );
 
 HeadLine.propTypes = {
-  tag: PropTypes.oneOf('h1', 'h2', 'h3', 'h4', 'h5', 'h6'),
-  align: PropTypes.oneOf('left', 'center', 'right'),
-  text: PropTypes.string,
+  tag: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6']),
+  align: PropTypes.oneOf(['left', 'center', 'right']),
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   className: PropTypes.string
 };
 
