@@ -4,7 +4,7 @@ import withStyle from './style';
 
 const Header = ({ className }) => (
   <header className={className}>
-    <h1>Weather Monster</h1>
+    <h1 className="headerText">Weather Monster</h1>
   </header>
 );
 

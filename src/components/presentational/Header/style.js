@@ -4,7 +4,8 @@ const style = component => styled(component)`
   display: block;
   margin: ${({ theme }) => theme.margin.max} 0;
 
-  h1 {
+  .headerText {
+    color: ${({ theme }) => theme.text.color};
     text-align: center;
     font-size: 3rem;
   }
