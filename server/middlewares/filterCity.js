@@ -33,6 +33,5 @@ module.exports = ({ query: { search } }) => {
   };
 
   const result = cities.reduce(reduceCities, []);
-  console.log('[filterCity middleware]: ', result);
   return result;
 };

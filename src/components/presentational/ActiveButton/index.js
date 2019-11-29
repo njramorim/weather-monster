@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withStyle from './style';
 
-export const ActiveButton = ({ className, id, onChange, isChecked }) => (
+const ActiveButton = ({ className, id, onChange, isChecked }) => (
   <div className={className}>
     <label className="clickArea" htmlFor={id} name={id}>
       Select
@@ -34,4 +34,5 @@ ActiveButton.defaultProps = {
 
 ActiveButton.displayName = 'ActiveButton';
 
+export { ActiveButton as PureActiveButton };
 export default withStyle(ActiveButton);

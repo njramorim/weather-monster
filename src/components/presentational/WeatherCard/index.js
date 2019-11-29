@@ -5,6 +5,7 @@ import HeadLine from '../HeadLine';
 import SimpleText from '../SimpleText';
 import CloseButton from '../CloseButton';
 import WeatherFigure from '../WeatherFigure';
+import { MAPS_URL } from '../../../lib/urls';
 
 const WeatherCard = ({ className, onClose, weather }) => {
   const {
@@ -18,13 +19,10 @@ const WeatherCard = ({ className, onClose, weather }) => {
     country
   } = weather;
 
-  const mapsHost = 'https://www.google.com/maps/place';
-  const mapsUrl = `${mapsHost}/${coords[0]}+${coords[1]}`;
-
   return (
     <article className={className}>
       <a
-        href={mapsUrl}
+        href={MAPS_URL(coords[0], coords[1])}
         target="_blank"
         rel="noopener noreferrer"
         title={`check ${name} - ${country} in the map`}
@@ -78,4 +76,5 @@ WeatherCard.propTypes = {
 
 WeatherCard.displayName = 'WeatherCard';
 
+export { WeatherCard as PureWeatherCard };
 export default withStyle(WeatherCard);

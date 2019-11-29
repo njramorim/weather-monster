@@ -25,6 +25,5 @@ module.exports = async ({ query: { id, coords, country } }) => {
     country
   };
 
-  console.log('[cityWeather middleware]: ', result);
   return result;
 };

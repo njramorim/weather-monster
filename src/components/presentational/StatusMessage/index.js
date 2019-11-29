@@ -20,4 +20,5 @@ StatusMessage.defaultProps = {
 
 StatusMessage.displayName = 'StatusMessage';
 
+export { StatusMessage as PureStatusMessage };
 export default withStyle(StatusMessage);

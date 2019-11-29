@@ -2,37 +2,22 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import withStyle from './style';
 
-let timer = null;
-
-const SearchField = ({ className, onCitySearch }) => {
-  const showSearchResults = value => {
-    clearTimeout(timer);
-    onCitySearch(value);
-  };
-
-  const handleFormSubmit = e => {
-    e.preventDefault();
-    showSearchResults(e.target[0].value);
-  };
-
-  const handleInputChange = ({ target: { value } }) => showSearchResults(value);
-
-  const handleInputFocus = async ({ target: { value } }) =>
-    !value
-      ? (timer = setTimeout(() => onCitySearch(' ', false), 1000))
-      : showSearchResults(value);
-
-  const handleInputFocusOut = () => clearTimeout(timer);
-
+const SearchField = ({
+  className,
+  onSubmit,
+  onChange,
+  onFocus,
+  onFocusOut
+}) => {
   return (
-    <form className={className} onSubmit={handleFormSubmit} autoComplete="off">
+    <form className={className} onSubmit={onSubmit} autoComplete="off">
       <input
         type="search"
         name="search"
         placeholder="Type the name of a city"
-        onKeyUp={handleInputChange}
-        onFocus={handleInputFocus}
-        onBlur={handleInputFocusOut}
+        onKeyUp={onChange}
+        onFocus={onFocus}
+        onBlur={onFocusOut}
       />
     </form>
   );
@@ -40,14 +25,14 @@ const SearchField = ({ className, onCitySearch }) => {
 
 SearchField.propTypes = {
   className: PropTypes.string,
-  onCitySearch: PropTypes.func
-};
-
-SearchField.defaultProps = {
-  searchString: 'Search',
-  onCitySearch: _ => _
+  onCitySearch: PropTypes.func,
+  onSubmit: PropTypes.func,
+  onChange: PropTypes.func,
+  onFocus: PropTypes.func,
+  onFocusOut: PropTypes.func
 };
 
 SearchField.displayName = 'SearchField';
 
+export { SearchField as PureSearchField };
 export default withStyle(SearchField);

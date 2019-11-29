@@ -11,4 +11,5 @@ SimpleText.propTypes = {
 
 SimpleText.displayName = 'SimpleText';
 
+export { SimpleText as PureSimpleText };
 export default withStyle(SimpleText);

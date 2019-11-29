@@ -22,4 +22,5 @@ HeadLine.defaultProps = {
 
 HeadLine.displayName = 'Headline';
 
+export { HeadLine as PureHeadLine };
 export default withStyle(HeadLine);

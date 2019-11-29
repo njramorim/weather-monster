@@ -6,7 +6,7 @@ import AwesomeDebouncePromise from 'awesome-debounce-promise';
 import { selectAddedCitiesId } from '../../store/selected-cities/selectors';
 import { fetchAddCity } from '../../store/selected-cities/action-creators';
 import Wrapper from '../presentational/Wrapper';
-import SearchField from '../presentational/SearchField';
+import SearchFieldContainer from './SearchFieldContainer';
 const CitiesList = React.lazy(() => import('../presentational/CitiesList'));
 
 const searchAPI = value => axios.get(`/api/cities?search=${value}`);
@@ -74,9 +74,9 @@ class CitiesSelection extends React.PureComponent {
     const { citiesId, loading } = this.props;
 
     return (
-      <div ref={this.setWrapperRef}>
+      <div ref={this.setWrapperRef} id="citiesSelectionRef">
         <Wrapper>
-          <SearchField onCitySearch={this.fetchCities} />
+          <SearchFieldContainer onCitySearch={this.fetchCities} />
           <Suspense fallback={''}>
             <CitiesList
               isLoading={loading}
@@ -95,6 +95,6 @@ class CitiesSelection extends React.PureComponent {
 
 CitiesSelection.displayName = 'CitiesSelectionContainer';
 
-const mapStateToProps = state => selectAddedCitiesId(state);
-
+export const mapStateToProps = state => selectAddedCitiesId(state);
+export { CitiesSelection as PureCitiesSelection };
 export default connect(mapStateToProps, { fetchAddCity })(CitiesSelection);

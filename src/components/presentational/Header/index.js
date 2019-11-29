@@ -12,4 +12,5 @@ Header.propTypes = {
   className: PropTypes.string
 };
 
+export { Header as PureHeader };
 export default withStyle(Header);

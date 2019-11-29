@@ -13,4 +13,5 @@ Wrapper.propTypes = {
 
 Wrapper.displayName = 'Wrapper';
 
+export { Wrapper as PureWrapper };
 export default withStyle(Wrapper);

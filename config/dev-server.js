@@ -7,7 +7,8 @@ const devServer = {
   port: 8080,
   compress: true,
   historyApiFallback: true,
-  before: app => IS_MOCK && app.use(apiMocker('/api', { target: 'mocks/api' })),
+  before: app =>
+    IS_MOCK && app.use(apiMocker('/api', { target: '__mocks__/api' })),
   proxy: {
     '/api': `http://localhost:${SERVER_PORT}`
   },

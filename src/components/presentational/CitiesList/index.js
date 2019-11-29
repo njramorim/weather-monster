@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import withStyle from './style';
 import CityItem from '../CityItem';
 
-const CitiesList = ({ className, cities, onCityAdd, selectedCitiesId }) => {
-  const isChecked = ({ cityId }) => selectedCitiesId.some(id => id === cityId);
+const isChecked = (ids, { cityId }) => ids.some(id => id === cityId);
 
+const CitiesList = ({ className, cities, onCityAdd, selectedCitiesId }) => {
   return (
     <section className={className}>
       <h1>Cities</h1>
@@ -16,7 +16,7 @@ const CitiesList = ({ className, cities, onCityAdd, selectedCitiesId }) => {
               <CityItem
                 city={city}
                 onCityAdd={onCityAdd}
-                isChecked={isChecked(city)}
+                isChecked={isChecked(selectedCitiesId, city)}
               />
             </li>
           ))}
@@ -49,4 +49,5 @@ CitiesList.defaultProps = {
 
 CitiesList.displayName = 'CitiesList';
 
+export { CitiesList as PureCitiesList };
 export default withStyle(CitiesList);

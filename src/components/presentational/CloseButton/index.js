@@ -29,4 +29,5 @@ CloseButton.defaultProps = {
 
 CloseButton.displayName = 'CloseButton';
 
+export { CloseButton as PureCloseButton };
 export default withStyle(CloseButton);

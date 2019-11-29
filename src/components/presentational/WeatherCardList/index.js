@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import WeatherCard from '../WeatherCard';
 import withStyle from './style';
 
+const sortByTempMax = (cityA, cityB) => cityB.tempMax - cityA.tempMax;
+
 const WeatherCardList = ({ className, cities, onRemoveCity }) => {
   const selectedCities = [...cities];
-  const sortByTempMax = (cityA, cityB) => cityB.tempMax - cityA.tempMax;
 
   return (
     <ol className={className}>
@@ -32,4 +33,5 @@ WeatherCardList.defaultProps = {
 
 WeatherCardList.displayName = 'WeatherCardList';
 
+export { WeatherCardList as PureWeatherCardList };
 export default withStyle(WeatherCardList);

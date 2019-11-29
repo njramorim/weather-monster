@@ -18,4 +18,5 @@ WeatherFigure.propTypes = {
 
 WeatherFigure.displayName = 'WeatherFigure';
 
+export { WeatherFigure as PureWeatherFigure };
 export default withStyle(WeatherFigure);

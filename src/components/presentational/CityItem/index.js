@@ -9,8 +9,6 @@ const CityItem = ({
   isChecked,
   onCityAdd
 }) => {
-  const handleChange = ({ target }) => onCityAdd(Number(target.value));
-
   return (
     <div className={className}>
       <dl className="description">
@@ -20,7 +18,11 @@ const CityItem = ({
         <dd className="country">({country})</dd>
         <dt>position:</dt>
       </dl>
-      <ActiveButton id={cityId} onChange={handleChange} isChecked={isChecked} />
+      <ActiveButton
+        id={cityId}
+        onChange={({ target }) => onCityAdd(Number(target.value))}
+        isChecked={isChecked}
+      />
     </div>
   );
 };
@@ -41,5 +43,5 @@ CityItem.defaultProps = {
 };
 
 CityItem.displayName = 'CityItem';
-
+export { CityItem as PureCityItem };
 export default withStyle(CityItem);

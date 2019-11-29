@@ -10,7 +10,7 @@ class CitiesWeather extends React.PureComponent {
   static propTypes = {
     removeCity: PropTypes.func,
     cities: PropTypes.array,
-    error: PropTypes.bool
+    error: PropTypes.string
   };
 
   onRemoveCity = cityId => this.props.removeCity(cityId);
@@ -29,6 +29,6 @@ class CitiesWeather extends React.PureComponent {
 
 CitiesWeather.displayName = 'CitiesWeatherContainer';
 
-const mapStateToProps = state => selectAddedCities(state);
-
+export const mapStateToProps = state => selectAddedCities(state);
+export { CitiesWeather as PureCitiesWeather };
 export default connect(mapStateToProps, { removeCity })(CitiesWeather);
