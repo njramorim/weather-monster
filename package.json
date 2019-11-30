@@ -21,8 +21,15 @@
       "pre-commit": "npm run lint:css && npm test"
     }
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "node",
+    "react",
+    "weather",
+    "cities",
+    "redux",
+    "webpack"
+  ],
+  "author": "Nelson Amorim Jr",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.6.4",
