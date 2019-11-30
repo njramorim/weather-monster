@@ -8,8 +8,9 @@ import { fetchAddCity } from '../../store/selected-cities/action-creators';
 import Wrapper from '../presentational/Wrapper';
 import SearchFieldContainer from './SearchFieldContainer';
 const CitiesList = React.lazy(() => import('../presentational/CitiesList'));
+const { API_HOST } = require('../../../config/settings');
 
-const searchAPI = value => axios.get(`/api/cities?search=${value}`);
+const searchAPI = value => axios.get(`${API_HOST}/cities?search=${value}`);
 const searchAPIDebounced = AwesomeDebouncePromise(searchAPI, 500);
 
 class CitiesSelection extends React.PureComponent {

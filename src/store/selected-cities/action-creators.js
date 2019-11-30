@@ -1,7 +1,10 @@
 import axios from 'axios';
+const { API_HOST } = require('../../../config/settings');
 
 const callWeatherApi = async (id, coords, country) =>
-  await axios.get(`/api/weather?id=${id}&coords=${coords}&country=${country}`);
+  await axios.get(
+    `${API_HOST}/weather?id=${id}&coords=${coords}&country=${country}`
+  );
 
 export const addCity = payload => ({ type: 'ADD_CITY', payload });
 

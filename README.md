@@ -32,9 +32,8 @@ To run the tests, just use wich one fits you better:
 ## Deployment
 
 This is a POC for a weather-api based application.
-With that in mind, just the development mode is working.
-So here there is a big TODO (profiles, pipelines, envs etc).
-But, still, one can output a production bundle of the client application with `npm run build`. Unfortennely it will not reach any server.
+With that in mind, there is a big TODO in things regarding production mode (profiles, pipelines, envs, etc).
+But, still, one can output a production bundle of the client application with `npm start`. This will output the client at `dist/index.html` and start the server.
 
 ## Built With
 
