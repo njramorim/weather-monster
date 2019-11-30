@@ -25,8 +25,11 @@ Alternatively you can also let the server aside and run the lazy mocked version 
 ## Running the tests
 
 To run the tests, just use wich one fits you better:
+
 `npm run test` -> run all the tests without coverage
+
 `npm run test:watch` -> useful while developing
+
 `npm run test:coverage` -> run tests and display the code coverage
 
 ## Deployment
