@@ -43,3 +43,5 @@ But, still, one can output a production bundle of the client application with `n
 - [Redux](https://redux.js.org/) - A predictable state container for JavaScript apps
 - [Styled-Components](https://www.styled-components.com/) - Visual primitives for the component age
 - [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and node.js
+- [Jest](https://jestjs.io/) - JavaScript Testing Framework with a focus on simplicity
+- [Enzyme](https://airbnb.io/enzyme/) - JavaScript Testing utility for React
