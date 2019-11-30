@@ -17,8 +17,8 @@ Obs: after selecting a city, try to click in its name to see it's location.
 ### Prerequisites
 
 ```
-node v10
-npm v6
+node >= v10
+npm > =v6
 ```
 
 ### Development Modes

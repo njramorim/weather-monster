@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
   "scripts": {
-    "start": "node ./server/index.js",
+    "start": "node server.js",
     "heroku-postbuild": "npm run build",
     "test": "jest",
     "test:watch": "jest --watch",

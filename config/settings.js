@@ -1,7 +1,7 @@
 const { NODE_ENV } = process.env;
 
 const IS_PRODUCTION = NODE_ENV === 'production';
-const SERVER_PORT = IS_PRODUCTION ? 8080 : 3000;
+const SERVER_PORT = process.env.PORT || 3000;
 
 module.exports = {
   SERVER_PORT,
