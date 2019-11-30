@@ -4,7 +4,8 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "npm run build && node ./server/index.js",
+    "start": "node ./server/index.js",
+    "heroku-postbuild": "npm run build",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage --colors",
