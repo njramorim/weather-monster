@@ -9,8 +9,8 @@ Git clone this repo, `npm install` it and run `npm run dev`.
 The application will be provided at http://localhost:8080 .  
 If you try to access http://localhost:8080?theme=[justTypeAnything] the Application styled theme will change.
 
-Also, if you click in the search-box and type nothing, it will bring the first 30 cities with more than 5 million inhabitants.
-If you type anything it will search and bring the first 30 results. You don't need to mind with accentuation or spaces ;).
+Click in the search-box and type nothing, it will bring the first 30 cities with more than 5 million inhabitants.  
+You can also type anything and it will search & bring the first 30 results. You don't need to mind with accentuation or spaces ;).
 
 Obs: after selecting a city, try to click in its name to see it's location.
 
@@ -41,8 +41,8 @@ To run the tests, just use wich one fits you better:
 ## Deployment
 
 This is a POC for a weather-api based application.
-With that in mind, there is a big TODO in things regarding production mode (profiles, pipelines, envs, etc).
-But, still, one can output a production bundle of the client application with `npm start`. This will output the client at `dist/index.html` and start the server.
+With that in mind, there is a big TODO in things regarding production mode (profiles, pipelines, envs, etc).  
+But, still, there is a production bundle running at https://weather-monster.herokuapp.com/
 
 ## Built With
 
