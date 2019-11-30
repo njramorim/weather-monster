@@ -8,7 +8,7 @@ const normalize = string =>
 
 module.exports = ({ query: { search } }) => {
   const maxSize = 30;
-  const minPopulation = 5 * 1000 * 1000; //5M
+  const minPopulation = 5e6; //5M
 
   const condition = city => {
     return search

@@ -6,7 +6,12 @@ get weather for (almost) all the cities
 
 Git clone this repo, `npm install` it and run `npm run dev`.
 The application will be provided at http://localhost:8080
-If you try to access http://localhost:8080?theme=[justTypeAnything] the Application styled theme will change
+If you try to access http://localhost:8080?theme=[justTypeAnything] the Application styled theme will change.
+
+Also, if you click in the search-box and type nothing, it will bring the first 30 cities with more than 5 million inhabitants.
+If you type anything it will search and bring the first 30 results. You don't need to mind with accentuation or spaces ;).
+
+Obs: after selecting a city, try to click in its name to see it's location.
 
 ### Prerequisites
 
