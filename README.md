@@ -5,6 +5,7 @@ get weather for (almost) all the cities
 ## Getting Started
 
 Git clone this repo, `npm install` it and run `npm run dev`.
+
 The application will be provided at http://localhost:8080
 If you try to access http://localhost:8080?theme=[justTypeAnything] the Application styled theme will change.
 
