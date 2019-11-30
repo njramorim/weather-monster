@@ -10,7 +10,7 @@ The application will be provided at http://localhost:8080 .
 If you try to access http://localhost:8080?theme=[justTypeAnything] the Application styled theme will change.
 
 Click in the search-box and type nothing, it will bring the first 30 cities with more than 5 million inhabitants.  
-You can also type anything and it will search & bring the first 30 results. You don't need to mind with accentuation or spaces ;).
+Type anything (you don't need to mind with accentuation or spaces) and it will search & bring the first 30 results.
 
 Obs: after selecting a city, try to click in its name to see it's location.
 
