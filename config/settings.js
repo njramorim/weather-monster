@@ -10,5 +10,5 @@ module.exports = {
   IGNORE_PATHS: /(node_modules|dist)/,
   IS_PRODUCTION,
   IS_MOCK: NODE_ENV === 'mock',
-  API_HOST: IS_PRODUCTION ? `http://localhost:${SERVER_PORT}/api` : '/api'
+  API_HOST: '/api'
 };
