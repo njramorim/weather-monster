@@ -37,7 +37,7 @@ const style = component => styled(component)`
     pointer-events: none;
 
     &:before {
-      content: '️✓';
+      content: '️\\2714 \\fe0e';
       position: absolute;
       color: ${({ theme }) => theme.colors.highStrong};
       text-align: center;
